@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Truck, Headphones, MessageCircle } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 import heroImg from "@/assets/hero.jpg";
-import { CATEGORIES, CATEGORY_IMAGES, PRODUCTS, buildWhatsAppLink } from "@/lib/products";
+import { CATEGORIES, CATEGORY_IMAGES, buildWhatsAppLink, type Product } from "@/lib/products";
+import { getProducts } from "@/lib/products.functions";
 import { ProductCard } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/")({
@@ -17,7 +19,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const featured = PRODUCTS.slice(0, 8);
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: () => getProducts(),
+    staleTime: 60_000,
+  });
+  const featured: Product[] = (data?.products ?? []).slice(0, 8);
   return (
     <>
       {/* Hero */}
