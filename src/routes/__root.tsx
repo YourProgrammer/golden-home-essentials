@@ -79,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lumen Appliances — Premium Home Appliances" },
-      { name: "description", content: "Premium freezers, ACs, TVs, microwaves, washing machines and refrigerators. Order easily via WhatsApp." },
+      { title: "Sally Global Mart — Your Trusted Global Sourcing Partner" },
+      { name: "description", content: "Sally Global Mart: premium home appliances including freezers, ACs, TVs, fridges, generators and more. Order easily via WhatsApp." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

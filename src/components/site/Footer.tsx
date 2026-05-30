@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 export function Footer() {
   return (
@@ -7,11 +8,11 @@ export function Footer() {
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 text-base font-semibold tracking-tight">
-            <span className="inline-block h-2 w-2 rounded-full bg-gold" />
-            Lumen Appliances
+            <img src={logo} alt="Sally Global Mart" className="h-8 w-8 rounded-full object-cover" />
+            Sally Global Mart
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-            Premium home appliances, curated for modern living.
+            Your trusted global sourcing partner.
           </p>
         </div>
         <div>
@@ -42,7 +43,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border/60">
         <div className="container-page py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© {new Date().getFullYear()} Lumen Appliances. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sally Global Mart. All rights reserved.</p>
           <p>Crafted with care.</p>
         </div>
       </div>

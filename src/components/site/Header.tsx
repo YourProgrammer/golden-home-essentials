@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import logo from "@/assets/logo.jpeg";
 import { Menu, X } from "lucide-react";
 
 const NAV = [
@@ -15,8 +16,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-base font-semibold tracking-tight">
-          <span className="inline-block h-2 w-2 rounded-full bg-gold" />
-          Lumen<span className="text-muted-foreground font-normal">Appliances</span>
+          <img src={logo} alt="Sally Global Mart" className="h-8 w-8 rounded-full object-cover" />
+          Sally<span className="text-muted-foreground font-normal">Global Mart</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
