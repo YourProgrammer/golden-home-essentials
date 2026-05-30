@@ -7,25 +7,37 @@ import freezer from "@/assets/freezer.jpg";
 import general from "@/assets/general.jpg";
 
 export const CATEGORIES = [
-  "Freezers",
-  "Air Conditioners",
-  "Flat Screen TVs",
-  "Microwaves",
-  "Washing Machines",
-  "Refrigerators",
-  "General Home Appliances",
+  "Air Conditioner",
+  "Air Fryer",
+  "Bluetooth Speaker",
+  "DC Standing Fan",
+  "Freezer",
+  "Fridge",
+  "Gas Cylinder",
+  "Generator",
+  "Soundbar",
+  "Standing Fan",
+  "Television",
+  "Washing Machine",
+  "Water Dispenser",
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number];
 
 export const CATEGORY_IMAGES: Record<Category, string> = {
-  Freezers: freezer,
-  "Air Conditioners": ac,
-  "Flat Screen TVs": tv,
-  Microwaves: microwave,
-  "Washing Machines": washingMachine,
-  Refrigerators: refrigerator,
-  "General Home Appliances": general,
+  "Air Conditioner": ac,
+  "Air Fryer": microwave,
+  "Bluetooth Speaker": general,
+  "DC Standing Fan": general,
+  Freezer: freezer,
+  Fridge: refrigerator,
+  "Gas Cylinder": general,
+  Generator: general,
+  Soundbar: general,
+  "Standing Fan": general,
+  Television: tv,
+  "Washing Machine": washingMachine,
+  "Water Dispenser": general,
 };
 
 // Fallback image used when a sheet row has no image URL.
@@ -41,11 +53,16 @@ export interface Product {
 }
 
 export const WHATSAPP_NUMBER = "1234567890";
+export const CURRENCY_SYMBOL = "₦";
+
+export function formatPrice(price: number) {
+  return `${CURRENCY_SYMBOL}${price.toLocaleString()}`;
+}
 
 export function buildWhatsAppLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 export function orderMessage(product: Product) {
-  return `Hello! I'd like to order:\n\n• ${product.name}\n• Price: $${product.price.toLocaleString()}\n• Ref: ${product.id}\n\nIs this item available?`;
+  return `Hello! I'd like to order:\n\n• ${product.name}\n• Price: ${formatPrice(product.price)}\n• Ref: ${product.id}\n\nIs this item available?`;
 }

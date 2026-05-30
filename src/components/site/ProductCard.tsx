@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { type Product, buildWhatsAppLink, orderMessage } from "@/lib/products";
+import { type Product, buildWhatsAppLink, formatPrice, orderMessage } from "@/lib/products";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
           <p className="text-xs uppercase tracking-wider text-muted-foreground">{product.category}</p>
           <h3 className="mt-1 text-base font-medium text-foreground">{product.name}</h3>
         </div>
-        <p className="text-base font-semibold whitespace-nowrap">${product.price.toLocaleString()}</p>
+        <p className="text-base font-semibold whitespace-nowrap">{formatPrice(product.price)}</p>
       </div>
       <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{product.description}</p>
       <a
