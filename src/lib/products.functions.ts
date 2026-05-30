@@ -26,7 +26,7 @@ import { FALLBACK_PRODUCT_IMAGE, type Product } from "./products";
  *  override this constant without editing code.
  * ============================================================
  */
-const SPREADSHEET_ID = "PASTE_YOUR_GOOGLE_SHEET_ID_HERE";
+const SPREADSHEET_ID = "1OA2jlOIGyBO95cvlIUi_10R_s1aIbzs6D7kdKFLiCs0";
 const SHEET_RANGE = "Sheet1!A2:E"; // skip header row, read 5 columns
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_sheets/v4";
