@@ -8,11 +8,11 @@ export function Footer() {
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 text-base font-semibold tracking-tight">
-            <span className="inline-block h-2 w-2 rounded-full bg-gold" />
-            Lumen Appliances
+            <img src={logo} alt="Sally Global Mart" className="h-8 w-8 rounded-full object-cover" />
+            Sally Global Mart
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-            Premium home appliances, curated for modern living.
+            Your trusted global sourcing partner.
           </p>
         </div>
         <div>
