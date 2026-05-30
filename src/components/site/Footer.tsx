@@ -43,7 +43,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border/60">
         <div className="container-page py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© {new Date().getFullYear()} Lumen Appliances. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sally Global Mart. All rights reserved.</p>
           <p>Crafted with care.</p>
         </div>
       </div>
