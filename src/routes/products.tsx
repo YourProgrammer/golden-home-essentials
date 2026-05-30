@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { CATEGORIES, type Category } from "@/lib/products";
+import { CATEGORIES, type Category, type Product } from "@/lib/products";
 import { getProducts } from "@/lib/products.functions";
 import { ProductCard } from "@/components/site/ProductCard";
 import { z } from "zod";
@@ -35,7 +35,7 @@ function ProductsPage() {
     staleTime: 60_000,
   });
 
-  const products = data?.products ?? [];
+  const products: Product[] = data?.products ?? [];
   const error = data?.error ?? null;
 
   const initial = (search.category as Category | undefined) ?? "All";
