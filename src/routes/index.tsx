@@ -19,7 +19,12 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const featured = PRODUCTS.slice(0, 8);
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: () => getProducts(),
+    staleTime: 60_000,
+  });
+  const featured: Product[] = (data?.products ?? []).slice(0, 8);
   return (
     <>
       {/* Hero */}
