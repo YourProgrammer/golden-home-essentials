@@ -2,16 +2,19 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import logo from "@/assets/logo.jpeg";
 import { Menu, X } from "lucide-react";
+import { CartButton, CartDrawer } from "./CartDrawer";
 
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products" },
+  { to: "/services", label: "Services" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="container-page flex h-16 items-center justify-between">
@@ -34,20 +37,16 @@ export function Header() {
           ))}
         </nav>
 
-        <Link
-          to="/contact"
-          className="hidden md:inline-flex h-9 items-center justify-center rounded-full border border-gold/40 bg-gold-soft/40 px-4 text-sm font-medium text-foreground hover:bg-gold/20 transition-colors"
-        >
-          Order on WhatsApp
-        </Link>
-
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-muted"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <CartButton onClick={() => setCartOpen(true)} />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-muted"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -66,6 +65,8 @@ export function Header() {
           </div>
         </div>
       )}
+
+      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
     </header>
   );
 }

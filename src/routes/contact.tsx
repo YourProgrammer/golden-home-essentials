@@ -5,10 +5,10 @@ import { buildWhatsAppLink } from "@/lib/products";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Lumen Appliances" },
-      { name: "description", content: "Reach us on WhatsApp, phone, or email. We respond fast and ship faster." },
-      { property: "og:title", content: "Contact — Lumen Appliances" },
-      { property: "og:description", content: "Get in touch with our team." },
+      { title: "Contact — Sally Global Mart" },
+      { name: "description", content: "Reach Sally Global Mart in Minna, Niger State via WhatsApp, phone, or email. Open every day 6am–10pm." },
+      { property: "og:title", content: "Contact — Sally Global Mart" },
+      { property: "og:description", content: "Get in touch with our team in Minna, Niger State." },
     ],
   }),
   component: ContactPage,
@@ -28,7 +28,7 @@ function ContactPage() {
       <div className="mt-12 grid lg:grid-cols-3 gap-8">
         {/* Primary CTA */}
         <a
-          href={buildWhatsAppLink("Hi Lumen! I'd like some help.")}
+          href={buildWhatsAppLink("Hi Sally Global Mart! I'd like some help.")}
           target="_blank"
           rel="noopener noreferrer"
           className="lg:col-span-2 rounded-3xl bg-foreground text-background p-10 md:p-14 flex flex-col justify-between min-h-[280px] hover:bg-foreground/95 transition-colors"
@@ -45,10 +45,10 @@ function ContactPage() {
 
         {/* Details */}
         <div className="rounded-3xl border border-border p-8 space-y-6">
-          <Detail icon={Phone} label="Call us" value="+1 (234) 567-890" />
-          <Detail icon={Mail} label="Email" value="hello@lumen.store" />
-          <Detail icon={MapPin} label="Showroom" value="12 Market Street, Downtown" />
-          <Detail icon={Clock} label="Hours" value="Mon–Sat, 9:00 – 19:00" />
+          <Detail icon={Phone} label="Call us" value="+234 (0) 816 750 5201" />
+          <Detail icon={Mail} label="Email" value="sallywise001globalenterprices@gmail.com" />
+          <Detail icon={MapPin} label="Store address" value="Gidan Gwanu, Along Lapai-Gwari Road, Bosso, Minna, Niger State" />
+          <Detail icon={Clock} label="Hours" value="Every day, 6:00 AM – 10:00 PM" />
         </div>
       </div>
 
@@ -56,10 +56,10 @@ function ContactPage() {
       <section className="mt-16">
         <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Order directly</h3>
         <div className="mt-4 flex flex-wrap gap-2">
-          {["Refrigerators", "Air Conditioners", "Flat Screen TVs", "Washing Machines", "Microwaves", "Freezers"].map((c) => (
+          {["Fridges", "Air Conditioners", "Televisions", "Washing Machines", "Generators", "Freezers", "Solar installation"].map((c) => (
             <a
               key={c}
-              href={buildWhatsAppLink(`Hi! I'm interested in ${c}.`)}
+              href={buildWhatsAppLink(`Hi Sally Global Mart! I'm interested in ${c}.`)}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-border px-4 py-2 text-sm hover:border-gold hover:bg-gold-soft/40 transition-colors"
@@ -79,9 +79,9 @@ function Detail({ icon: Icon, label, value }: { icon: typeof Phone; label: strin
       <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold-soft/60 shrink-0">
         <Icon className="h-4 w-4" />
       </div>
-      <div>
+      <div className="min-w-0">
         <p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
-        <p className="mt-0.5 text-sm font-medium">{value}</p>
+        <p className="mt-0.5 text-sm font-medium break-words">{value}</p>
       </div>
     </div>
   );

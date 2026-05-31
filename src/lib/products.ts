@@ -52,7 +52,8 @@ export interface Product {
   image: string;
 }
 
-export const WHATSAPP_NUMBER = "1234567890";
+// Sally Global Mart — WhatsApp number (international format, no +)
+export const WHATSAPP_NUMBER = "2348167505201";
 export const CURRENCY_SYMBOL = "₦";
 
 export function formatPrice(price: number) {
@@ -64,5 +65,26 @@ export function buildWhatsAppLink(message: string) {
 }
 
 export function orderMessage(product: Product) {
-  return `Hello! I'd like to order:\n\n• ${product.name}\n• Price: ${formatPrice(product.price)}\n• Ref: ${product.id}\n\nIs this item available?`;
+  return `Hello Sally Global Mart! I'd like to order:\n\n• ${product.name}\n• Price: ${formatPrice(product.price)}\n• Ref: ${product.id}\n\nIs this item available?`;
+}
+
+export interface CartLine {
+  product: Product;
+  quantity: number;
+}
+
+export function cartTotal(lines: CartLine[]) {
+  return lines.reduce((sum, l) => sum + l.product.price * l.quantity, 0);
+}
+
+export function cartOrderMessage(lines: CartLine[]) {
+  if (lines.length === 0) return "Hello Sally Global Mart! I'd like to place an order.";
+  const items = lines
+    .map(
+      (l, i) =>
+        `${i + 1}. ${l.product.name}\n   Qty: ${l.quantity} × ${formatPrice(l.product.price)} = ${formatPrice(l.product.price * l.quantity)}`,
+    )
+    .join("\n");
+  const total = cartTotal(lines);
+  return `Hello Sally Global Mart! I'd like to place this order:\n\n${items}\n\n----------------------\nTotal: ${formatPrice(total)}\n\nPlease confirm availability and delivery.`;
 }
