@@ -9,10 +9,10 @@ import { ProductCard } from "@/components/site/ProductCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lumen Appliances — Premium Home Appliances" },
-      { name: "description", content: "Discover premium refrigerators, ACs, TVs, washing machines and more. Curated quality, easy WhatsApp ordering." },
-      { property: "og:title", content: "Lumen Appliances — Premium Home Appliances" },
-      { property: "og:description", content: "Curated quality home appliances. Easy WhatsApp ordering." },
+      { title: "Sally Global Mart — Appliances, Solar & Electrical in Minna" },
+      { name: "description", content: "Fridges, ACs, TVs, generators, solar and electrical installation in Minna, Niger State. Order easily on WhatsApp." },
+      { property: "og:title", content: "Sally Global Mart — Appliances, Solar & Electrical" },
+      { property: "og:description", content: "Quality home appliances and installation services. Order on WhatsApp." },
     ],
   }),
   component: Index,
@@ -61,7 +61,7 @@ function Index() {
             </div>
             <div className="absolute -bottom-4 -left-4 hidden sm:block rounded-2xl bg-background border border-border px-5 py-4 shadow-elegant">
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Free delivery</p>
-              <p className="text-sm font-medium">On orders over $500</p>
+              <p className="text-sm font-medium">On orders over ₦500,000</p>
             </div>
           </div>
         </div>
@@ -123,9 +123,9 @@ function Index() {
       <section className="container-page py-16 md:py-24 border-t border-border/60">
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { icon: ShieldCheck, title: "2-year warranty", body: "Every appliance is covered with a full manufacturer warranty." },
-            { icon: Truck, title: "Fast, free delivery", body: "Complimentary delivery and installation on orders over $500." },
-            { icon: Headphones, title: "Expert support", body: "Real people, ready to help — before and after your purchase." },
+            { icon: ShieldCheck, title: "Genuine products", body: "Every appliance comes with a full manufacturer warranty and authentic serial numbers." },
+            { icon: Truck, title: "Delivery & installation", body: "Fast delivery across Minna and Niger State, with professional installation by our technicians." },
+            { icon: Headphones, title: "Open every day", body: "We're open 6:00 AM – 10:00 PM, every single day — including weekends and public holidays." },
           ].map(({ icon: Icon, title, body }) => (
             <div key={title} className="rounded-2xl border border-border p-8">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gold-soft/60">

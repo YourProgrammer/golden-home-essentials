@@ -12,7 +12,7 @@ export function Footer() {
             Sally Global Mart
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-            Your trusted global sourcing partner.
+            Home appliances, solar & electrical installations across Minna and Niger State.
           </p>
         </div>
         <div>
@@ -20,6 +20,7 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/" className="hover:text-foreground">Home</Link></li>
             <li><Link to="/products" className="hover:text-foreground">Products</Link></li>
+            <li><Link to="/services" className="hover:text-foreground">Services</Link></li>
             <li><Link to="/about" className="hover:text-foreground">About</Link></li>
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
           </ul>
@@ -27,17 +28,17 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-medium">Contact</h4>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-gold" /> +1 (234) 567-890</li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-gold" /> hello@lumen.store</li>
-            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-gold" /> 12 Market Street</li>
+            <li className="flex items-start gap-2"><Phone className="h-4 w-4 text-gold mt-0.5" /> +234 (0) 816 750 5201</li>
+            <li className="flex items-start gap-2"><Mail className="h-4 w-4 text-gold mt-0.5 shrink-0" /> <span className="break-all">sallywise001globalenterprices@gmail.com</span></li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 text-gold mt-0.5 shrink-0" /> Gidan Gwanu, Along Lapai-Gwari Road, Bosso, Minna, Niger State</li>
           </ul>
         </div>
         <div>
           <h4 className="text-sm font-medium">Hours</h4>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li>Mon – Fri: 9:00 – 19:00</li>
-            <li>Saturday: 10:00 – 17:00</li>
-            <li>Sunday: Closed</li>
+            <li>Open every day</li>
+            <li>6:00 AM – 10:00 PM</li>
+            <li>Including Saturday & Sunday</li>
           </ul>
         </div>
       </div>
