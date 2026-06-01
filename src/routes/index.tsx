@@ -92,17 +92,17 @@ function Index() {
         </div>
 
         <div className="mt-10 grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {CATEGORIES.map((cat) => (
+          {categoryCards.map((cat) => (
             <Link
-              key={cat}
+              key={cat.name}
               to="/products"
-              search={{ category: cat } as never}
+              search={{ category: cat.name } as never}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card hover:border-gold transition-colors"
             >
               <div className="aspect-[5/4] overflow-hidden bg-muted">
                 <img
-                  src={CATEGORY_IMAGES[cat]}
-                  alt={cat}
+                  src={cat.image}
+                  alt={cat.name}
                   loading="lazy"
                   width={900}
                   height={900}
@@ -110,12 +110,16 @@ function Index() {
                 />
               </div>
               <div className="p-4 flex items-center justify-between">
-                <span className="text-sm font-medium">{cat}</span>
+                <div>
+                  <span className="text-sm font-medium block">{cat.name}</span>
+                  <span className="text-xs text-muted-foreground">{cat.count} item{cat.count === 1 ? "" : "s"}</span>
+                </div>
                 <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-gold transition-colors" />
               </div>
             </Link>
           ))}
         </div>
+
       </section>
 
       {/* Featured Products */}
