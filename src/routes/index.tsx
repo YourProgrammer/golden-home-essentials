@@ -29,13 +29,12 @@ function Index() {
 
   // Build category cards from actual products so images and labels always match the sheet.
   const categoryCards = CATEGORIES
-    .map((cat) => {
-      const sample = products.find((p) => p.category === cat);
-      return sample
-        ? { name: cat, image: sample.image, count: products.filter((p) => p.category === cat).length }
-        : null;
+    .map((cat): { name: Category; image: string; count: number } | null => {
+      const items = products.filter((p) => p.category === cat);
+      const sample = items[0];
+      return sample ? { name: cat, image: sample.image, count: items.length } : null;
     })
-    .filter((c): c is { name: string; image: string; count: number } => c !== null);
+    .filter((c): c is { name: Category; image: string; count: number } => c !== null);
 
   return (
     <>
