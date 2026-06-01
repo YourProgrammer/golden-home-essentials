@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Truck, Headphones, MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import heroImg from "@/assets/hero.jpg";
-import { CATEGORIES, CATEGORY_IMAGES, buildWhatsAppLink, type Product } from "@/lib/products";
+import { CATEGORIES, CATEGORY_IMAGES, buildWhatsAppLink, type Category, type Product } from "@/lib/products";
 import { getProducts } from "@/lib/products.functions";
 import { ProductCard } from "@/components/site/ProductCard";
 
