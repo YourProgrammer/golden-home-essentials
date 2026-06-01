@@ -24,7 +24,19 @@ function Index() {
     queryFn: () => getProducts(),
     staleTime: 60_000,
   });
-  const featured: Product[] = (data?.products ?? []).slice(0, 8);
+  const products: Product[] = data?.products ?? [];
+  const featured: Product[] = products.slice(0, 8);
+
+  // Build category cards from actual products so images and labels always match the sheet.
+  const categoryCards = CATEGORIES
+    .map((cat) => {
+      const sample = products.find((p) => p.category === cat);
+      return sample
+        ? { name: cat, image: sample.image, count: products.filter((p) => p.category === cat).length }
+        : null;
+    })
+    .filter((c): c is { name: string; image: string; count: number } => c !== null);
+
   return (
     <>
       {/* Hero */}
