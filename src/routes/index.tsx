@@ -42,16 +42,16 @@ function Index() {
       <section className="container-page pt-16 md:pt-24 pb-16 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground animate-fade-in-up">
               <span className="h-px w-8 bg-gold" /> Premium home appliances
             </span>
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] animate-fade-in-up animate-delay-100">
               The appliances<br />your home <span className="text-gold">deserves.</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-md">
+            <p className="mt-6 text-lg text-muted-foreground max-w-md animate-fade-in-up animate-delay-200">
               Carefully selected refrigerators, washers, ACs and TVs — built to last, designed to delight. Order in seconds via WhatsApp.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up animate-delay-300">
               <Link
                 to="/products"
                 className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium hover:bg-foreground/90 transition-colors"
